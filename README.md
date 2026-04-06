@@ -1,56 +1,76 @@
-# UK Road Casualty Vehicles Analysis (2024)
+# UK Road Casualty Vehicle Analysis (2024)
 
-*Author: Cansu Gulum*
-*Date: 21 September 2025*
-*Project Status: Complete*
-
----
-
-## Project Description
-
-This project performs an exploratory data analysis (EDA) on the "Road Safety Data - Vehicles" dataset for the provisional mid-year of 2024, sourced from data.gov.uk. The primary goal is to clean the raw data and uncover initial insights into the characteristics of vehicles and drivers involved in road casualties in the UK.
-
-The entire analysis is conducted in R, utilizing the Tidyverse and Janitor packages for data manipulation, cleaning, and visualization.
+**Author:** Cansu Gulum  
+**Tools:** R (tidyverse, ggplot2, janitor)
 
 ---
 
-## Data Source
+## Project Overview
 
-* **Title:** Road Safety Data - Vehicles Provisional mid-year unvalidated 2024
-* **Source:** data.gov.uk (Department for Transport)
-* **Link:** [https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-accidents-safety-data)
+This project explores UK road casualty data (2024) to understand how driver age and vehicle type are associated with collision involvement.
 
----
-
-## Key Questions & Findings
-
-This analysis aimed to answer two primary questions:
-
-### 1. What is the age distribution of drivers involved in collisions?
-
-The analysis revealed a right-skewed distribution for driver ages.
-
-* **Finding 1.1:** The highest concentration of accidents involves drivers between the ages of 25 and 40.
-* **Finding 1.2:** A significant secondary peak is observed for novice drivers in their late teens and early 20s.
-
-![Driver Age Distribution Histogram](histogram_driver_age.png)
-
-### 2. How do vehicle types differ across the identified age groups?
-
-By categorizing drivers into "Young", "Middle-Aged", and "Older" groups, we analyzed the vehicle types most common in accidents for each group.
-
-* **Finding 2.1:** Cars are, by a large margin, the most common vehicle type involved in accidents across all age groups.
-* **Finding 2.2:** Motorcycles represent a proportionally larger share of accidents for "Young Drivers" compared to other age groups.
-* **Finding 2.3:** The highest absolute number of accidents involving Pedal Cycles occurred in the "Middle-Aged" driver group.
-
-![Age Group vs Vehicle Type Chart](barchart_age_vehicle.png)
+The analysis focuses on:
+- Distribution of driver ages
+- Differences in vehicle type across age groups
 
 ---
 
-## Technical Skills Demonstrated
+## Dataset
 
-* Data Cleaning (`janitor::clean_names`, `dplyr::mutate`, `dplyr::na_if`)
-* Data Manipulation (`dplyr::group_by`, `dplyr::summarise`, `dplyr::count`, `dplyr::case_when`)
-* Exploratory Data Analysis (EDA)
-* Data Visualization (`ggplot2`)
-* Project Documentation (README.md)
+- **Source:** UK Department for Transport (data.gov.uk)  
+- **Dataset:** Road Safety Data – Vehicles (2024)  
+- **Link:** https://www.data.gov.uk/
+
+---
+
+## Workflow
+
+1. Load raw CSV data  
+2. Clean column names and handle missing values  
+3. Explore driver age distribution  
+4. Group drivers into age categories  
+5. Analyse vehicle type composition within each group  
+6. Visualise results  
+
+---
+
+## Key Findings
+
+- Driver involvement in collisions peaks between ages **25–35**
+- Younger drivers show a **higher relative involvement in motorcycles**
+- Cars dominate across all age groups, but this reflects overall prevalence
+
+---
+
+## Visualisations
+
+### Driver Age Distribution
+![Driver Age Distribution](plots/driver_age_distribution.png)
+
+### Vehicle Type by Age Group
+![Vehicle Type by Age Group](plots/vehicle_type_by_age_group.png)
+
+---
+
+## How to Run
+
+1. Place dataset in the `data/` folder  
+2. Open the script in RStudio  
+3. Run the script to generate plots  
+
+---
+
+## Skills Demonstrated
+
+- Data cleaning and preprocessing  
+- Exploratory data analysis (EDA)  
+- Data visualisation with ggplot2  
+- Structured project organisation 
+
+---
+
+## Limitations
+
+- The dataset reflects reported collisions, not total driving exposure  
+- Results are not normalised by vehicle usage or mileage  
+- Limited contextual variables (e.g. region, time of day)
